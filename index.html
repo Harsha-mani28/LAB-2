@@ -1,0 +1,118 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Store</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            text-align: center;
+        }
+
+        nav {
+            background: #1e293b;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 12px;
+        }
+
+        section {
+            padding: 30px 15px;
+        }
+
+        .product {
+            display: inline-block;
+            background: white;
+            width: 200px;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 8px;
+        }
+
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 20px;
+        }
+
+        #contact {
+            scroll-margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <section id="home">
+        <h2>Welcome to Fashion Store</h2>
+        <p>Wear Your Style. Express Yourself.</p>
+        <p>Trendy and comfortable clothing at affordable prices.</p>
+    </section>
+
+    <section id="men">
+        <h2>Men's Collection</h2>
+
+        <div class="product">
+            <h3>T-Shirt</h3>
+            <p>Comfortable cotton wear</p>
+            <p>Price: ₹499</p>
+        </div>
+
+        <div class="product">
+            <h3>Hoodie</h3>
+            <p>Stylish casual hoodie</p>
+            <p>Price: ₹999</p>
+        </div>
+    </section>
+
+    <section id="women">
+        <h2>Women's Collection</h2>
+
+        <div class="product">
+            <h3>Casual Top</h3>
+            <p>Trendy everyday wear</p>
+            <p>Price: ₹599</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We offer stylish clothing with quality and affordable prices.</p>
+    </section>
+
+    <div id="footer"></div>
+
+    <script>
+        fetch("header.html")
+            .then(response => {
+                if (!response.ok) throw new Error("Header file not found");
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+            })
+            .catch(error => console.error(error));
+
+        fetch("footer.html")
+            .then(response => {
+                if (!response.ok) throw new Error("Footer file not found");
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            })
+            .catch(error => console.error(error));
+    </script>
+
+</body>
+</html>
